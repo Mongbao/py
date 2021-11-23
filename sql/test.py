@@ -11,14 +11,18 @@ conn = pymssql.connect(
     user='sa',
     password='sa',
     database='Northwind')
-
+#if connect:
+#    print("連線成功")
 cursor = conn.cursor(as_dict=True)
 
-cursor.execute("select * from Employees")
+cursor.execute("select FirstName,LastName,Title from Employees")
 
-print(cursor.fetchall())
-#for row in cursor:
-#    print()
+
+#rows=cursor.fetchall()
+for row in cursor:
+    #print(row)
+    print("FirstName=%s"%(row['FirstName']))
+
 
 #connect.commit()
 cursor.close()
