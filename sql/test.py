@@ -1,4 +1,5 @@
 import pymssql
+import re
 
 #server 資料庫伺服器名稱或IP    (192.168.0.30\SQLEXPRESS)(114.35.131.81\SQLEXPRESS)
 #user   使用者名稱             (sa)
@@ -7,8 +8,8 @@ import pymssql
 #conn = pymssql.connect(server,user,userpassword,database)
 
 conn = pymssql.connect(
-    #host='192.168.0.30\SQLEXPRESS',
-    host='114.35.131.81\SQLEXPRESS',
+    host='192.168.0.30/\/SQLEXPRESS',
+
     user='sa',
     password='sa',
     database='Northwind')
